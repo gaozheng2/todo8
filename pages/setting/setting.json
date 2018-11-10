@@ -1,0 +1,9 @@
+{
+	"navigationBarTitleText": "自定义设置",
+	"disableScroll": true,
+	"usingComponents": {
+		"radio": "/components/radio/radio",
+		"help": "/components/help/help",
+		"set-category": "/components/set-category/set-category"
+	}
+}

@@ -1,0 +1,17 @@
+/* 【单选按钮】组件 */
+
+@import '/app.wxss'; /* 引用通用样式文件 */
+
+.radio-box {
+	width: 300rpx;
+	height: 80rpx;
+}
+
+.radio-btn {
+	width: 80rpx;
+}
+
+.radio-text {
+	width: 200rpx;
+	justify-content: flex-start;
+}

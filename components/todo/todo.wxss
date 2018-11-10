@@ -1,0 +1,44 @@
+/* 【待办事项】组件 */
+
+@import '/app.wxss'; /* 引用通用样式文件 */
+
+/* Todo总容器 */
+.todo-container {
+	position: relative;
+	margin: 15rpx 25rpx;
+}
+
+/* 边框容器 */
+.todo-box {
+	height: 102rpx;
+	border-bottom: 1px solid;
+}
+
+/* 可滑动容器 */
+.todo-item {
+	position: absolute;
+	width: 700rpx;
+	height: 100rpx;
+    overflow: hidden;
+	z-index: 5;
+}
+
+/* 文字容器 */
+.todo-content {
+	width: 500rpx;
+	align-items: flex-start;
+}
+
+/* 标题容器 */
+.todo-title {
+	height: 45rpx;
+}
+
+/* 右侧按钮容器 */
+.todo-btn {
+	position: absolute;
+	top: 25rpx;
+	right: 0;
+	z-index: 4;
+	width: 150rpx;
+}

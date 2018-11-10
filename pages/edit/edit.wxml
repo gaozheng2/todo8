@@ -1,0 +1,83 @@
+<!-- 【新建/编辑事项】页面 -->
+<view class="{{theme.name}} container">
+
+    <!-- 标题行 -->
+    <view class='box-row box-top'>
+        <!-- 帮助按钮 -->
+        <help theme="{{theme}}"></help>
+
+        <!-- +按钮 -->
+        <view class='box-row box-title'>
+			<image hidden="{{!isShowAdd||isEditCategory}}" class='icon-small' src="/imgs/icon/{{theme.iurl2}}/add.png" bindtap='onTapAdd'></image>
+        </view>
+
+        <!-- 保存按钮 -->
+        <view class='icon-micro icon-save'>
+            <image wx:if="{{!isEditCategory}}" hidden="{{!isShowSave}}" class='icon-small' src="/imgs/icon/{{theme.iurl}}/save.png" bindtap='onTapSave'></image>
+			<image wx:else class='icon-small' src="/imgs/icon/{{theme.iurl}}/save@down.png" bindtap='onTapSaveCategory'></image>
+        </view>
+    </view>
+
+    <scroll-view enable-back-to-top='true' class='box-column box-main line'>
+		<!-- 待办事项组件 -->
+		<todo class='todo' theme="{{theme}}" is-edit="true" todo-data="{{todoData}}" bind-tap-todo='onTapTodo' bind-check-todo='onCheckTodo' bind-tap-category-todo='onTapCategoryTodo'></todo>
+
+		<!-- 标题输入框 -->
+		<view hidden="{{!isShowTitle}}" class='box-row edit-box'>
+			<text class='font-category' space='emsp'>标题：</text>
+			<input class='box-gap edit-input' value="{{todoData.title}}" focus="{{focus}}" placeholder="" maxlength='20' bindinput='onChangeTitle' />
+		</view>
+
+		<!-- 计划日期 -->
+		<view hidden="{{!isShowPlanTime}}" class='box-row edit-box'>
+			<block wx:if="{{isCheckPlanTime}}">
+				<image hidden="{{!isEditPlanTime}}" class='icon-micro' src="/imgs/icon/{{theme.iurl2}}/c_check@done.png" bindtap='onTapPlanTime'></image>
+				<text class='font-category' space='ensp'>{{isEditPlanTime?' ':''}}计划日期： </text>
+				<picker mode="date" value="{{date}}" start="{{startTime}}" bindchange="onChangePlanTime">
+					<view>{{todoData.planTime}}</view>
+				</picker>
+			</block>
+
+			<block wx:else>
+				<image class='icon-micro' src="/imgs/icon/{{theme.iurl}}/c_check.png" bindtap='onTapPlanTime'></image>
+				<text class='font-disable' space='ensp'> 计划日期</text>
+			</block>
+		</view>
+
+		<!-- 记忆周期 -->
+		<view hidden="{{!isShowMemory}}" class='box-row edit-box'>
+			<block wx:if="{{isCheckMemory}}">
+				<image class='icon-micro' src="/imgs/icon/{{theme.iurl2}}/c_check@done.png" bindtap='onTapMemory'></image>
+				<text class='font-category' space='ensp'> 记忆：</text>
+				<block wx:for="{{memoryArr}}" wx:key='index'>
+					<text class="{{memoryIndex==index?'font-key':''}}" space='ensp' data-index="{{index}}" bindtap='onTapMemoryItem'> {{item}} </text>
+					<text hidden="{{index==6}}">·</text>
+				</block>
+			</block>
+
+			<block wx:else>
+				<image class='icon-micro' src="/imgs/icon/{{theme.iurl}}/c_check.png" bindtap='onTapMemory'></image>
+				<text class='font-disable' space='ensp'> 记忆周期</text>
+			</block>
+		</view>
+
+		<!-- 重复周期 -->
+		<view hidden="{{!isShowRepeat}}" class='box-row edit-box'>
+			<text class='font-category'>重复周期： </text>
+			<picker mode="multiSelector" range="{{repeatArr}}" value="{{repeatIndex}}" class="{{isEditRepeat?'':'font-disable'}}" disabled="{{!isEditRepeat}}" bindchange="onChangeRepeat" bindcolumnchange="onChangeRepeatColumn">
+				<view>{{repeatArr[0][repeatIndex[0]]}} {{repeatIndex[0]!=0?'-':''}} {{repeatIndex[0]!=0?repeatArr[1][repeatIndex[1]]:''}}</view>
+			</picker>
+		</view>
+
+		<!-- 备注输入框 -->
+		<view class='box-row edit-box font-underline line-gap'>
+			<text class='font-category' space='emsp'>备注：</text>
+			<input class='box-gap edit-input' value="{{todoData.remark}}" placeholder="" maxlength='30' bindinput='onChangeRemark' />
+		</view>
+
+		<!-- 设置类别组件 -->
+		<view hidden="{{!isShowCategory}}" animation="{{animation}}" class="{{isEditCategory?'set-category':''}}">
+			<set-category theme="{{theme}}" is-edit="{{isEditCategory}}" select-category-id="{{selectCategoryId}}" bind-tap-category-edit="onTapCategoryEdit" bind-tap-category-icon="onTapCategoryIcon"></set-category>
+		</view>
+    </scroll-view>
+</view>

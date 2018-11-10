@@ -1,0 +1,8 @@
+{
+	"component": true,
+	"usingComponents": {
+		"add": "/components/add/add",
+		"todo": "/components/todo/todo",
+		"category": "/components/category/category"
+	}
+}

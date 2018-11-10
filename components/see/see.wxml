@@ -1,0 +1,6 @@
+<!-- 【显示/隐藏按钮】组件 -->
+
+<view class="box-row" bindtap='onTapSee' >
+	<image wx:if="{{isSee}}" class='icon-small' src="/imgs/icon/{{theme.iurl}}/see.png"></image>
+	<image wx:else class='icon-small' src="/imgs/icon/{{theme.iurl}}/see@close.png"></image>
+</view>

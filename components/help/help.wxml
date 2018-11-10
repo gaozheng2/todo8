@@ -1,0 +1,4 @@
+<!-- 【帮助按钮】组件 -->
+<view bindtap='onTapHelp'>
+    <image class='icon-small' src="/imgs/icon/{{theme.iurl}}/help.png"></image>
+</view>

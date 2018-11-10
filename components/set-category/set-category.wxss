@@ -1,0 +1,50 @@
+/* 【设置类别】页面 */
+
+@import '/app.wxss'; /* 引用通用样式文件 */
+
+.set-category-box {
+	margin: 30rpx 0;
+	width: 700rpx;
+	height: 300rpx;
+	align-content: space-around;
+	z-index: 50;
+}
+
+.set-category-item {
+	width: 140rpx;
+	height: 140rpx;
+	justify-content: space-around;
+}
+
+.set-category-item-icon {
+	width: 90rpx;
+	height: 90rpx;
+}
+
+.set-category-name {
+	width: 700rpx;
+	height: 120rpx;
+	border-top: 1px solid;
+	border-bottom: 1px solid;
+	z-index: 50;
+}
+
+.set-category-input {
+	margin-right: 50rpx;
+	width: 200rpx;
+}
+
+.set-category-order {
+	width: 50rpx;
+}
+.set-category-icon {
+	margin: 15rpx 55rpx;
+	width: 700rpx;
+	height: 500rpx;
+	z-index: 50;
+}
+
+.set-category-icon-item {
+	width: 80rpx;
+	height: 80rpx;
+}

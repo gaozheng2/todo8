@@ -1,0 +1,18 @@
+<!-- 【选择类别】组件 -->
+
+<view hidden="{{!isShow}}" class="{{theme.name}} box-column">
+    <!-- 分类图标 -->
+    <view class='box-row box-center {{theme.name}} box-border line category-box' style="top:{{top}}px">
+        <block wx:for="{{categoryArr}}" wx:key="index">
+            <view class='box-column category-item' bindtap='onTapCategory' data-index="{{index}}" data-id="{{item.id}}">
+                <view class="box-row category-item-icon line-key {{selectCategory==item.id?'box-border':''}}">
+                    <image class="icon-small" src="/imgs/category/{{theme.curl}}/{{item.icon}}.png"></image>
+                </view>
+                <view class="font-small {{selectCategory==item.id?'font-key':''}}">{{item.name}}</view>
+            </view>
+        </block>
+    </view>
+
+	<!-- 全屏遮罩 -->
+	<view class='box-musk' bindtap='onTapMusk'></view>
+</view>

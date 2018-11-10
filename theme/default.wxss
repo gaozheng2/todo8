@@ -1,0 +1,46 @@
+/* 【经典76】主题样式文件 */
+
+/* 容器样式 */
+.default {
+    background-color: #1b3643;
+	color: #FFF;
+}
+
+.default .box-gap {
+    background-color: #3C545F;
+	color: #FFF;
+}
+
+/* 边框样式 */
+.default .line {
+	border-color: #ccc;
+}
+
+.default .line-gap {
+	border-color: #555;
+}
+
+.default .line-key {
+	border-color: #FDCB01;
+}
+
+.default .userinfo-avatar {
+	border-color: #FFF;
+}
+
+/* 字体样式 */
+.default .font-key {
+	color: #FDCB01;
+}
+
+.default .font-date {
+	color: #7EEFC0;
+}
+
+.default .font-category {
+	color: #61BFD5;
+}
+
+.default .font-disable {
+	color: #89959A;
+}

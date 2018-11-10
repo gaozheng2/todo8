@@ -1,0 +1,20 @@
+/* 【新建/编辑事项】页面 */
+
+.edit-box {
+	margin-left: 50rpx;
+	width: 650rpx;
+	height: 100rpx;
+	justify-content: flex-start;
+}
+
+.edit-input {
+	width: 520rpx;
+	padding: 0 20rpx;
+	text-align: left;
+}
+
+.set-category {
+	position: absolute;
+	left: -25rpx;
+	z-index: 50;
+}

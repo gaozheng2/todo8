@@ -1,0 +1,93 @@
+<!--【日程规划】页面-->
+<view class="{{theme.name}} container">
+
+    <!-- 标题行 -->
+    <view class='box-row box-top'>
+        <!-- 帮助按钮 -->
+        <help theme="{{theme}}"></help>
+
+        <!-- 日历按钮 -->
+        <view class='box-row box-center box-title'>
+            <image class='icon-small' src="/imgs/icon/{{theme.iurl}}/date.png"></image>
+        </view>
+
+        <!-- 共享按钮 -->
+        <image class='icon-small' src="/imgs/icon/{{theme.iurl}}/share.png"></image>
+    </view>
+
+    <view class='box-row box-main line'>
+        <!-- 日期列 -->
+        <view class='box-column box-height line plan-date'>
+            <view class='box-row line-gap plan-date-item'>
+                <view class="box-row font-category">每天</view>
+            </view>
+            <view class='box-row line-gap plan-date-item'>
+                <view class="box-row line-key font-key plan-date-current">每周一</view>
+            </view>
+            <view class='box-row line-gap plan-date-item'>
+                <view class="box-row font-category">每周二</view>
+            </view>
+            <view class='box-row line-gap plan-date-item'>
+                <view class="box-row font-category">每周三</view>
+            </view>
+            <view class='box-row line-gap plan-date-item'>
+                <view class="box-row font-category">每周四</view>
+            </view>
+            <view class='box-row line-gap plan-date-item'>
+                <view class="box-row font-category">每周五</view>
+            </view>
+            <view class='box-row line-gap plan-date-item'>
+                <view class="box-row font-category">每周六</view>
+            </view>
+            <view class='box-row line-gap plan-date-item'>
+                <view class="box-row font-category">每周日</view>
+            </view>
+            <view class='box-row line plan-date-item'>
+                <view class="box-row font-category">每月</view>
+            </view>
+			<view class='box-row line plan-date-item'>
+                <view class="box-row font-date">记忆</view>
+            </view>
+        </view>
+
+        <!-- 事项列 -->
+        <scroll-view scroll-y="true" enable-back-to-top='true' class='box box-column box-height plan-todo'>
+            <view class="box font-date">每月</view>
+            <view class="box font-date">每月</view>
+            <view class="box font-date">每月</view>
+            <view class="box font-date">每月</view>
+            <view class="box font-date">每月</view>
+            <view class="box font-date">每月</view>
+            <view class="box font-date">每月</view>
+            <view class="box font-date">每月</view>
+            <view class="box font-date">每月</view>
+            <view class="box font-date">每月</view>
+            <view class="box font-date">每月</view>
+            <view class="box font-date">每月</view>
+            <view class="box font-date">每月</view>
+            <view class="box font-date">每月</view>
+            <view class="box font-date">每月</view>
+            <view class="box font-date">每月</view>
+            <view class="box font-date">每月</view>
+            <view class="box font-date">每月</view>
+            <view class="box font-date">每月</view>
+            <view class="box font-date">每月</view>
+            <view class="box font-date">每月</view>
+            <view class="box font-date">每月</view>
+            <view class="box font-date">每月</view>
+            <view class="box font-date">每月</view>
+            <view class="box font-date">每月</view>
+            <view class="box font-date">每月</view>
+            <view class="box font-date">每月</view>
+            <view class="box font-date">每月</view>
+            <view class="box font-date">每月</view>
+            <view class="box font-date">每月</view>
+            <view class='box box-blank'>
+                <text class='font-disable'>点击 + 添加规划</text>
+            </view>
+        </scroll-view>
+    </view>
+
+    <!-- 添加事项组件 -->
+    <add theme="{{theme}}"></add>
+</view>

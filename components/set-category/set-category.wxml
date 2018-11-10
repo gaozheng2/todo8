@@ -1,0 +1,36 @@
+<!-- 【设置类别】组件 -->
+<view class="{{theme.name}} box-column">
+	<!-- 分类图标 -->
+	<view class='box-row box-center line-gap set-category-box'>
+		<block wx:for="{{categoryArr}}" wx:key="index">
+			<view class='box-column set-category-item' bindtap='onTapCategory' data-id="{{item.id}}" data-index="{{index}}">
+				<view class="box-row set-category-item-icon line-key {{selectCategoryId==item.id?'box-border':''}}">
+					<image class="icon" src="/imgs/category/{{theme.curl}}/{{item.icon}}.png"></image>
+				</view>
+				<view class="{{selectCategoryId==item.id?'font-key':''}}">{{item.name}}</view>
+			</view>
+		</block>
+	</view>
+
+	<!-- 分类名称和顺序 -->
+	<view hidden="{{!isEdit||selectCategoryId<0}}" class='box-row box-center line-gap set-category-name'>
+		<text class='font-category'>名称：</text>
+		<input class='box-gap set-category-input' value="{{selectCategory.name}}" placeholder="" maxlength='6' bindinput='onChangeName' />
+		<text class='font-category'>顺序：</text>
+		<view class="box-row icon-micro" bindtap='onTapLeft'><text decode='true' class="{{selectCategoryIndex==0?'font-disable':''}}">&lt;</text></view>
+		<text class='set-category-order'> {{selectCategoryIndex+1}} </text>
+		<view class="box-row icon-micro" bindtap='onTapRight'><text decode='true' class="{{selectCategoryIndex==9?'font-disable':''}}">&gt;</text></view>
+	</view>
+
+	<!-- 备选图标 -->
+	<view hidden="{{!isEdit||selectCategoryId<0}}" class='box-row set-category-icon'>
+		<block wx:for="{{iconArr}}" wx:key="index">
+			<view class="box-row set-category-icon-item line-key {{selectCategory.icon==item?'box-border':''}}" data-icon="{{item}}" bindtap='onTapIcon'>
+				<image class="box-row icon-small" src="/imgs/category/{{theme.curl}}/{{item}}.png"></image>
+			</view>
+		</block>
+	</view>
+
+	<!-- 编辑按钮 -->
+	<view hidden="{{isEdit}}" class='font-small font-key font-underline' bindtap='onTapEdit'>编辑类别</view>
+</view>

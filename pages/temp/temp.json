@@ -1,0 +1,9 @@
+{
+	"navigationBarTitleText": "临时事项",
+	"disableScroll": true,
+	"usingComponents": {
+		"todo-list": "/components/todo-list/todo-list",
+		"see": "/components/see/see",
+		"help": "/components/help/help"
+	}
+}

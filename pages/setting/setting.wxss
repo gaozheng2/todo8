@@ -1,0 +1,11 @@
+/* 【自定义设置】页面 */
+
+.set-theme-box {
+	height: 200rpx;
+	justify-content: center;
+}
+
+.set-page-box {
+	height: 100rpx;
+	justify-content: center;
+}

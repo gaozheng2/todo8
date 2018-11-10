@@ -1,0 +1,10 @@
+/* 【添加按钮】组件 */
+
+.btn-add {
+    position: fixed;
+    bottom: 29rpx;
+	right: 29rpx;
+	z-index: 10;
+	width: 80rpx;
+    height: 80rpx;
+}

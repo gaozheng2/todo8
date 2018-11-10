@@ -1,0 +1,23 @@
+/* 【日程规划】页面 */
+
+.plan-date {
+	width: 150rpx;
+	border-right: 1px solid;
+}
+
+.plan-date-item {
+	width: 150rpx;
+	height: 100rpx;
+	border-bottom: 1px solid;
+}
+
+.plan-todo {
+	width: 600rpx;
+
+}
+
+.plan-date-current {
+	width: 150rpx;
+	height: 100rpx;
+	border-left: 8rpx solid;
+}

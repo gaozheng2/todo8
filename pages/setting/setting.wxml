@@ -1,0 +1,44 @@
+<!--【自定义设置】页面-->
+<view class="{{theme.name}} container">
+
+    <!-- 标题行 -->
+    <view class='box-row box-top'>
+        <!-- 帮助按钮 -->
+        <help theme="{{theme}}"></help>
+
+        <!--  用户头像 -->
+        <view class='box-row box-center box-title'>
+            <view class='userinfo-avatar'>
+                <open-data type="userAvatarUrl"></open-data>
+            </view>
+        </view>
+
+        <!-- 保存按钮 -->
+        <view class='icon-micro icon-save'>
+            <image hidden="{{isNoSave}}" class='icon-small' src="/imgs/icon/{{theme.iurl}}/save.png" bindtap='onTapSave'></image>
+        </view>
+    </view>
+
+    <scroll-view scroll-y="true" enable-back-to-top='true' class='box box-column box-main line'>
+        <!-- 设置分类 -->
+        <view class='box-gap'>设置分类</view>
+        <set-category theme="{{theme}}" bind-no-save='onNoSave'></set-category>
+
+        <!-- 设置主题 -->
+        <view class='box-gap'>设置主题</view>
+        <view class='box-row set-theme-box'>
+            <!-- 单选按钮框体 -->
+            <block wx:for="{{themeArr}}" wx:key="index">
+                <radio theme="{{theme}}" name="{{item.title}}" value="{{item.name}}" is-checked="{{item.name==theme.name}}" bind-radio-check="onThemeCheck"></radio>
+            </block>
+        </view>
+
+        <!-- 设置启动页面 -->
+        <view class='box-gap'>设置启动页面</view>
+        <view class='box-row set-page-box'>
+            <block wx:for="{{pageArr}}" wx:key="index">
+                <radio theme="{{theme}}" name="{{item.name}}" value="{{item.value}}" is-checked="{{item.value==page}}" bind-radio-check="onPageCheck"></radio>
+            </block>
+        </view>
+    </scroll-view>
+</view>

@@ -1,0 +1,25 @@
+/* 【选择类别】页面 */
+
+@import '/app.wxss'; /* 引用通用样式文件 */
+
+.category-box {
+	position: absolute;
+	top: 500rpx;
+	left: 120rpx;
+	z-index: 22;
+	width: 520rpx;
+	height: 260rpx;
+	align-content: space-around;
+	border-radius: 20rpx;
+}
+
+.category-item {
+	width: 100rpx;
+	height: 120rpx;
+	justify-content: space-around;
+}
+
+.category-item-icon {
+	width: 80rpx;
+	height: 80rpx;
+}

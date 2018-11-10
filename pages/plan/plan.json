@@ -1,0 +1,9 @@
+{
+	"navigationBarTitleText": "日程规划",
+	"disableScroll": true,
+	"usingComponents": {
+		"add": "/components/add/add",
+		"todo": "/components/todo/todo",
+		"help": "/components/help/help"
+	}
+}

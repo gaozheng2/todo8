@@ -1,0 +1,30 @@
+<!-- 【今日事项】页面 -->
+<view class="{{theme.name}} container">
+
+    <!-- 标题行 -->
+    <view class='box-row box-top'>
+        <!-- 帮助按钮 -->
+        <help theme="{{theme}}"></help>
+
+        <!-- 日期 -->
+        <view class='box-row box-center box-title'>
+            <view class='font-huge'>
+                {{date.day}}
+            </view>
+			<view class='box-column font-small today-date line'>
+                <view>
+					{{date.week}}
+            	</view>
+				<view>
+					{{date.year}} {{date.month}}			
+            	</view>
+            </view>
+        </view>
+
+        <!-- 显示/隐藏按钮 -->
+        <see bind-change-see="onChangeSee" is-see="{{isSee}}" theme="{{theme}}"></see>
+    </view>
+
+    <!-- 【事项列表】组件 -->
+	<todo-list class='box-column box-main line' theme="{{theme}}" todo-arr="{{todoArr}}" category-arr="{{categoryArr}}" is-see="{{isSee}}" is-moved="{{isMoved}}">点击 + 添加事项</todo-list>
+</view>

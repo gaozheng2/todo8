@@ -1,0 +1,46 @@
+/* 【魅惑百合】主题样式文件 */
+
+/* 容器样式 */
+.windowmaker {
+    background-color: #5F4D87;
+	color: #FFF;
+}
+
+.windowmaker .box-gap {
+    background-color: #8679A6;
+	color: #FFF;
+}
+
+/* 边框样式 */
+.windowmaker .line {
+	border-color: #C6ADD4;
+}
+
+.windowmaker .line-gap {
+	border-color: #7D6C9C;
+}
+
+.windowmaker .line-key {
+	border-color: #E390F7;
+}
+
+.windowmaker .userinfo-avatar {
+	border-color: #FFF;
+}
+
+/* 字体样式 */
+.windowmaker .font-key {
+	color: #FDCB01;
+}
+
+.windowmaker .font-date {
+	color: #7EEFC0;
+}
+
+.windowmaker .font-category {
+	color: #E390F7;
+}
+
+.windowmaker .font-disable {
+	color: #9785AD;
+}

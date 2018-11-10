@@ -1,0 +1,5 @@
+<!--【添加按钮】组件 -->
+
+<view bindtap='onTapAdd'>
+    <image class='btn-add' src="/imgs/icon/{{theme.iurl2}}/add.png"></image>
+</view>

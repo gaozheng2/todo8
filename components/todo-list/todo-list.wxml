@@ -1,0 +1,22 @@
+<!-- 【事项列表】组件 -->
+<!-- 滚动框 -->
+<scroll-view class="{{theme.name}} box-column box-height" scroll-y="{{!isInMove}}" enable-back-to-top='true' bindscroll="onScroll" bindtouchend="onScrollEnd" bindscrolltoupper="onScrollTop">
+	<!-- 待办事项组件 -->
+	<block wx:for="{{todoArr}}" wx:key="index">
+		<todo theme="{{theme}}" index="{{index}}" is-see="{{isSee}}" is-moved="{{isMoved}}" select-category="{{selectCategory}}" todo-data="{{item}}" bind-check-todo='onCheckTodo' bind-re-moved='onReMovedTodo' bind-in-move='onInMoveTodo'
+			bind-tap-del='onTapDelTodo' bind-tap-category-todo='onTapCategoryTodo'></todo>
+	</block>
+
+	<!-- 提示文字 -->
+	<view name='box-blank' class="box-row box-blank">
+		<text hidden="{{!isShowTip}}" class='font-disable'><slot></slot></text>
+		<text hidden="{{selectCategory==-1}}" class='font-key font-underline' bindtap='onTapShowAllCategory'>显示全部类别</text>
+	</view>
+    
+
+    <!-- 添加事项组件 -->
+    <add theme="{{theme}}"></add>
+
+    <!-- 选择类别组件 -->
+    <category theme="{{theme}}" category-arr="{{categoryArr}}" select-category="{{selectCategory}}" top="{{categoryTop}}" is-show="{{isShowCategory}}" bind-category-tap='onCategoryTap'></category>
+</scroll-view>

@@ -1,0 +1,45 @@
+/* 【粉红天使】主题样式文件 */
+
+/* 页面样式 */
+.mercy {
+    background-color: #FFF7F1;
+	color: #F56A91;
+}
+
+.mercy .box-gap {
+    background-color: #FEE1E3;
+}
+
+/* 边框样式 */
+.mercy .line {
+	border-color: #FAB0C1;
+}
+
+.mercy .line-gap {
+	border-color: #FEE1E3;
+}
+
+.mercy .line-key {
+	border-color: #FAB0C1;
+}
+
+.mercy .userinfo-avatar {
+	border-color: #FEE1E3;
+}
+
+/* 字体样式 */
+.mercy .font-key {
+	color: #4DD9BD;
+}
+
+.mercy .font-date {
+	color: #FAB0C1;
+}
+
+.mercy .font-category {
+	color: #4AC6EA;
+}
+
+.mercy .font-disable {
+	color: #aaa;
+}

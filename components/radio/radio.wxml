@@ -1,0 +1,10 @@
+<!-- 【单选按钮】组件 -->
+<view class="box-row radio-box" bindtap='onTapRadio'>
+	<!-- 按钮图片 -->
+	<view class='box-row radio-btn'>
+		<image wx:if="{{isChecked}}" class='icon-micro' src="/imgs/icon/{{theme.iurl2}}/c_check@done.png"></image>
+		<image wx:else class='icon-micro' src="/imgs/icon/{{theme.iurl}}/c_check.png"></image>
+	</view>
+	<!-- 按钮文字 -->
+	<view class="box-row radio-text {{isChecked?'font-key':''}}">{{name}}</view>
+</view>

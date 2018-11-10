@@ -1,0 +1,8 @@
+.today-date {
+	margin-left: 15rpx;
+	padding-left: 10rpx;
+	height: 70rpx;
+	justify-content: center;
+	align-items: flex-start;
+	border-left: 2px solid;
+}

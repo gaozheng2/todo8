@@ -1,0 +1,9 @@
+{
+	"navigationBarTitleText": "编辑事项",
+	"disableScroll": true,
+	"usingComponents": {
+		"todo": "/components/todo/todo",
+		"help": "/components/help/help",
+		"set-category": "/components/set-category/set-category"
+	}
+}

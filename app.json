@@ -1,0 +1,46 @@
+{
+    "pages": [
+        "pages/temp/temp",
+		"pages/today/today",        
+        "pages/plan/plan",
+        "pages/edit/edit",
+        "pages/setting/setting",
+        "pages/date/date",
+        "pages/share/share"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "backgroundColor": "#1B3643",
+        "navigationBarBackgroundColor": "#1B3643",
+        "navigationBarTitleText": "打卡8",
+        "navigationBarTextStyle": "white",
+        "enablePullDownRefresh": false
+    },
+    "tabBar": {
+        "borderStyle": "white",
+        "backgroundColor": "#1B3643",
+        "color": "#FFFFFF",
+        "selectedColor": "#FDCB01",
+        "position": "bottom",
+        "list": [
+            {
+                "pagePath": "pages/temp/temp",
+                "text": "临时",
+                "iconPath": "imgs/toolbar/default/temp.png",
+                "selectedIconPath": "imgs/toolbar/default/temp@select.png"
+            },
+            {
+                "pagePath": "pages/today/today",
+                "text": "今日",
+                "iconPath": "imgs/toolbar/default/today.png",
+                "selectedIconPath": "imgs/toolbar/default/today@select.png"
+            },
+            {
+                "pagePath": "pages/plan/plan",
+                "text": "规划",
+                "iconPath": "imgs/toolbar/default/plan.png",
+                "selectedIconPath": "imgs/toolbar/default/plan@select.png"
+            }
+        ]
+    }
+}

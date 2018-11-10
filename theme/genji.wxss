@@ -1,0 +1,46 @@
+/* 【清凉源氏】主题样式文件 */
+
+/* 容器样式 */
+.genji {
+    background-color: #54A7A6;
+	color: #FFF;
+}
+
+.genji .box-gap {
+    background-color: #80BDBC;
+	color: #FFF;
+}
+
+/* 边框样式 */
+.genji .line {
+	border-color: #4DD9BD;
+}
+
+.genji .line-gap {
+	border-color: #73B3B4;
+}
+
+.genji .line-key {
+	border-color: #FFF;
+}
+
+.genji .userinfo-avatar {
+	border-color: #FFF;
+}
+
+/* 字体样式 */
+.genji .font-key {
+	color: #FDCB01;
+}
+
+.genji .font-date {
+	color: #FAB0C1;
+}
+
+.genji .font-category {
+	color: #6DF9DD;
+}
+
+.genji .font-disable {
+	color: #80BDBC;
+}

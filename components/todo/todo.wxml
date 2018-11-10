@@ -1,0 +1,53 @@
+<!--【待办事项】组件 -->
+
+<view hidden="{{!isShow}}" class="{{theme.name}} todo-container">
+	<!-- 边框容器 -->
+	<view class="todo-box line-gap">
+		<!-- 可滑动容器 -->
+		<view class="{{theme.name}} box-row todo-item" style="{{txtStyle}}" bindtouchstart="onTouchS" bindtouchmove="onTouchM" bindtouchend="onTouchE">
+		
+			<!-- 类别图标 -->
+			<view class='box-row' bindtap='onTapCategory'>
+				<image class="icon" src="/imgs/category/{{theme.curl}}/{{category.icon}}.png"></image>
+			</view>
+			
+			<!-- 文字容器 -->
+			<view bindtap="onTapTodo" class='box-column todo-content'>
+				<!--第一行文字：类别名称（事项内容） -->
+				<view class="{{todoData.isDone||noTitle?'font-disable':''}} todo-title">{{showTitle}}</view>
+
+				<!-- 第二行文字：计划时间-完成时间 重复类型 -->
+				<view class='box-row font-small'>
+					<text class='font-category' space="emsp">{{category.name}} </text>
+
+					<!-- 计划-完成时间 -->
+					<text hidden="{{todoData.type=='plan'}}" class="{{showDelay?'font-key':'font-date'}}" space="ensp">{{showPlanTime}} </text>
+					<text hidden="{{!todoData.planTime||todoData.type=='plan'}}" class="{{showDelay?'font-key':'font-date'}}" space="ensp">{{todoData.isDone?'- '+showEndTime:''}} </text>
+					
+					<!-- 重复周期 -->
+					<text wx:if="{{todoData.type=='repeat'||todoData.type=='plan'}}" class='font-category' space="ensp"> {{showRepeat}}</text>
+					
+					<!-- 记忆周期 -->
+					<!--<block wx:if="{{todoData.type=='memory'&&(index==todoData.memory||index==todoData.memory+1||index==todoData.memory-1)}}" wx:for="{{memoryArr}}" wx:key='index'>
+						<text class="{{todoData.memory==index?'font-key':'font-category'}}" space='ensp'> {{item}} </text>
+						<text hidden="{{index==6}}">·</text>
+					</block>-->
+					<text wx:if="{{todoData.type=='memory'}}" class='font-category' space="ensp"> 记忆-第{{memoryArr[todoData.memory]}}天</text>
+				</view>
+			</view>
+
+			<!-- 检查框 -->
+			<view  class="box-row {{isMoved||isInMove?'icon-disable':''}}" catchtap='onTapCheck'>
+				<image wx:if="{{!todoData.isDone}}" class='icon-small' src="/imgs/icon/{{theme.iurl}}/t_check.png"></image>
+				<image wx:else class='icon-small' src="/imgs/icon/{{theme.iurl2}}/t_check@done.png"></image>
+			</view>
+		</view>
+
+		<!-- 右侧按钮 -->
+		<view class="box-row todo-btn">
+			<image hidden="{{!isShowCopy}}" class="icon-micro" data-index="{{index}}" catchtap="onTapCopy" src="/imgs/icon/{{theme.iurl}}/copy.png"></image>
+			<image hidden="{{isShowCopy}}" class="icon-micro" data-index="{{index}}" catchtap="onTapDelay" src="/imgs/icon/{{theme.iurl}}/delay.png"></image>
+			<image class="icon-micro" data-index="{{index}}" catchtap="onTapDel" src="/imgs/icon/{{theme.iurl}}/del.png"></image>
+		</view>
+	</view>
+</view>
