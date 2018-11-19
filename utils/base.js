@@ -3,6 +3,11 @@
 import { User } from 'user.js'; // 引用User类
 import { Config } from 'config.js'; // 引用全局常量
 
+// 错误提示信息
+const errMsg = {
+	9999: '网络连接错误',
+	1000: '服务器错误'
+}
 
 // 通用请求函数，当noRefetch为true时，不再重复调用请求
 function request(params, noRefetch) {
@@ -23,9 +28,9 @@ function request(params, noRefetch) {
 		responseType: 'text',
 		success: function (res) {
 			var code = res.statusCode.toString(); // 读取http状态码
-			var startChat = code.charAt(0); // 读取状态码第一位数字
+			//var startChat = code.charAt(0); // 读取状态码第一位数字
 
-			if (startChat == '2') { // 状态码为2，则调用成功回调函数
+			if (code.startsWith('2')) { // 状态码以2开头，则调用成功回调函数
 				params.sCallback && params.sCallback(res.data); // 回调函数存在则调用回调函数
 			}
 			else { // 服务器返回错误时，则重新调用1次
@@ -39,22 +44,28 @@ function request(params, noRefetch) {
 					}
 				}
 				if (noRefetch) { // 重复调用再次失败，则提示错误
-					wx.showToast({
-						icon: 'none',
-						title: '服务器连接错误',
-					})
+					_showError(1000)
 				}
 			}
 		},
 		fail: function (res) {
 			// 一般网络中断才会出现fail
-			wx.showToast({
-				icon: 'none',
-				title: '网络连接错误',
-			})
+			_showError(9999)
 		},
 		complete: function (res) { },
 	});
+}
+
+// 提示错误信息
+function _showError(errCode) {
+	if (!errCode) {
+		errCode = 9999
+	}
+	wx.showToast({
+		title: errMsg[errCode],
+		icon: 'none',		
+		duration: 2000
+	})
 }
 
 // 获得元素上绑定的data-值
@@ -106,10 +117,7 @@ function getNetStatus() {
 		success: function (res) {
 			// 返回网络类型：wifi/2g/3g/4g/none(无网络)
 			if (res.networkType == 'none') {
-				wx.showToast({
-					icon: 'none',
-					title: '无网络连接'
-				})
+				_showError(9999)
 			}
 		}
 	})
