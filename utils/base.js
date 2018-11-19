@@ -1,20 +1,15 @@
 // 公共函数
 
-import { User } from 'user.js'; // 引用User类
-import { Config } from 'config.js'; // 引用全局常量
+import { Config } from 'config.js' // 引用全局常量
+import { User } from 'user.js' // 引用User类
 
-// 错误提示信息
-const errMsg = {
-	9999: '网络连接错误',
-	1000: '服务器错误'
-}
 
 // 通用请求函数，当noRefetch为true时，不再重复调用请求
 function request(params, noRefetch) {
 	this.getNetStatus() // 检测网络状态
-	var that = this;
+	var that = this
 	if (!params.type) { // 默认请求方式为GET
-		params.type = 'GET';
+		params.type = 'GET'
 	}
 	wx.request({
 		url: Config.restUrl + params.url, // 拼装请求url
@@ -48,12 +43,11 @@ function request(params, noRefetch) {
 				}
 			}
 		},
-		fail: function (res) {
-			// 一般网络中断才会出现fail
+		fail: function (res) { // 一般网络中断才会出现fail
 			_showError(9999)
 		},
 		complete: function (res) { },
-	});
+	})
 }
 
 // 提示错误信息
@@ -62,7 +56,7 @@ function _showError(errCode) {
 		errCode = 9999
 	}
 	wx.showToast({
-		title: errMsg[errCode],
+		title: Config.errMsg[errCode],
 		icon: 'none',		
 		duration: 2000
 	})
@@ -70,7 +64,7 @@ function _showError(errCode) {
 
 // 获得元素上绑定的data-值
 function getDSet(event, key) {
-	return event.currentTarget.dataset[key];
+	return event.currentTarget.dataset[key]
 }
 
 // 显示提示框
@@ -79,7 +73,7 @@ function showTips(title, message) {
 		title: title,
 		content: message,
 		showCancel: false
-	});
+	})
 }
 
 // 按指定长度剪切字符串，并添加char
@@ -100,7 +94,7 @@ function cutString(str, len, char = '') {
 			return s.substring(0, s.length-1) + char;
 		}
 	}
-	return s;
+	return s
 }
 
 // 获取元素自适应后的实际宽度

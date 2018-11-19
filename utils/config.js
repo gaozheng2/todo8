@@ -7,6 +7,11 @@ class Config {
 // 静态属性，不需要实例化
 Config.restUrl = 'https://www.xxxspace.com.cn/todo8/public/api/v1/' //服务器访问地址
 
+Config.errMsg = { // 错误提示信息
+	9999: '网络连接错误',
+	1000: '服务器错误'
+}
+
 Config.repeatArr = [ // 重复类型数组
 	['每天'],
 	['周一', '周二', '周三', '周四', '周五', '周六', '周日'],

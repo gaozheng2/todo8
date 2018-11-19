@@ -1,6 +1,6 @@
 // 用户相关操作类
 
-import { Config } from '../utils/config.js'; // 引用全局属性
+import { Config } from 'config.js' // 引用全局常量
 
 
 class User 
